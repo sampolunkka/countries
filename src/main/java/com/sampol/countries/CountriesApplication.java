@@ -11,9 +11,6 @@ public class CountriesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CountriesApplication.class, args);
 
-		//getAllCountries();
-		getCountry("Finland");
-
 	}
 
 	public static void getAllCountries() {
