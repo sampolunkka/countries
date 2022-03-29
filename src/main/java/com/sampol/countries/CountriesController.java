@@ -1,23 +1,23 @@
 package com.sampol.countries;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.boot.json.*;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import reactor.core.publisher.Flux;
+
+
 
 @RestController
 public class CountriesController {
 
-	
+	private WebClient webClient = WebClient.builder().build();
+
 	@GetMapping(value = "/countries")
 	public List<Country> getCountries() { 
 		String url = "https://restcountries.com/v3.1/all";
@@ -32,5 +32,21 @@ public class CountriesController {
 		RestTemplate restTemplate = new RestTemplate();
 		Country[] countries = restTemplate.getForObject(url, Country[].class);
 		return Arrays.asList(countries);
+	}
+
+	@GetMapping(value = "/reactive/countries")
+	public Flux<Country> getReactiveCountries() {
+		return webClient.get()
+		.uri("https://restcountries.com/v3.1/all")
+		.retrieve()
+		.bodyToFlux(Country.class);
+	}
+
+	@GetMapping(value = "/reactive/countries/{name}")
+	public Flux<Country> getReactiveCountryByName(@PathVariable String name) {
+		return webClient.get()
+		.uri("https://restcountries.com/v3.1/name/{name}", name)
+		.retrieve()
+		.bodyToFlux(Country.class);
 	}
 }

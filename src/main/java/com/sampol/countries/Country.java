@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Country implements Serializable {
 
     private Name name;
-    private String cca2;
+    private String cca2 = "default";
     private String[] capital;
     private int population;
     private Flags flags;
@@ -34,5 +34,12 @@ public class Country implements Serializable {
     }
     public Flags getFlags() {
         return flags;
+    }
+
+    @Override
+    public String toString() {
+      return "Greeting{" +
+          "message='" + cca2 + '\'' +
+          '}';
     }
 }

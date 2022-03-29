@@ -10,4 +10,9 @@ public class Name {
     public String getCommon() {
         return common;
     }
+
+    @Override
+    public String toString() {
+        return getCommon();
+    }
 }
