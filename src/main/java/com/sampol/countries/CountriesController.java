@@ -35,18 +35,18 @@ public class CountriesController {
 	}
 
 	@GetMapping(value = "/reactive/countries")
-	public Flux<Country> getReactiveCountries() {
+	public Flux<CountryShortened> getReactiveCountries() {
 		return webClient.get()
 		.uri("https://restcountries.com/v3.1/all")
 		.retrieve()
-		.bodyToFlux(Country.class);
+		.bodyToFlux(CountryShortened.class);
 	}
 
 	@GetMapping(value = "/reactive/countries/{name}")
-	public Flux<Country> getReactiveCountryByName(@PathVariable String name) {
+	public Flux<CountryFull> getReactiveCountryByName(@PathVariable String name) {
 		return webClient.get()
 		.uri("https://restcountries.com/v3.1/name/{name}", name)
 		.retrieve()
-		.bodyToFlux(Country.class);
+		.bodyToFlux(CountryFull.class);
 	}
 }

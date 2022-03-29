@@ -15,19 +15,4 @@ public class CountriesApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(CountriesApplication.class, args);
 
 	}
-	/*
-	public static void getAllCountries() {
-		CountriesController controller = new CountriesController();
-		System.out.println(controller.getCountries());
-	}
-
-	public static void getCountry(String name) {
-		CountriesController controller = new CountriesController();
-		System.out.println(controller.getCountryByName(name));
-	}
-
-	public static int multiply(int number, int multiplier) {
-		return number * multiplier;
-	}
-*/
 }
