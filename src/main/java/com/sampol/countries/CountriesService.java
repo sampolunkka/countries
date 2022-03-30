@@ -18,8 +18,6 @@ public class CountriesService {
 		CountryWithInfo[] countries = restTemplate.getForObject(url, CountryWithInfo[].class);
 		CountryWithInfo mostRelevantResult = countries[0];
 		return mostRelevantResult;
-
-        
 	}
 
     

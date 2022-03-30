@@ -20,6 +20,7 @@ public class HttpRequestTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+
     @Test
     public void getFinlandShouldReturnInCorrectFormat() throws Exception {
         String expectedResponseString = "{\"name\":\"Finland\",\"country_code\":\"FI\",\"capital\":\"Helsinki\",\"population";
