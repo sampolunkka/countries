@@ -24,6 +24,8 @@ ENDPOINTS
         Retrieves a single country in the following format as response:
         {"name":"Uruguay","country_code":"UY","capital":"Montevideo","population":3473727,"flag_file_url":"https://flagcdn.com/w320/uy.png"}
 
+        NOTE: name not matching any country may produce unexpected results
+
 
 HOW TO RUN
 
@@ -31,7 +33,6 @@ HOW TO RUN
     2. Navigate to project root and execute the command "mvn package"
     3. Execute the .jar file with "java -jar target\countries-0.0.1-SNAPSHOT.jar"
         a. Default port is set as 8080
-        b. You may choose to define the port while excuting "--server.port=<port_number>"
     4. Now you can send GET requests using web browser or a http tool (postman, curl)
         a. Default address is http://localhost:8080
 
