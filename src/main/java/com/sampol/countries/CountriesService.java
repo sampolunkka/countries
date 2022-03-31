@@ -1,7 +1,5 @@
 package com.sampol.countries;
 
-import com.sampol.countries.dtos.*;
-
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
