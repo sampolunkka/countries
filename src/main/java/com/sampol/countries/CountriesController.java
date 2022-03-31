@@ -9,17 +9,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class CountriesController {
 
 	private CountriesService countriesService = new CountriesService();
+	
 
+	/**
+	 * Retrieves countries from Service
+	 * @return Countries from service wrapped in ResponceEntity
+	 */
 	@GetMapping(value = "/countries")
 	public ResponseEntity<Object> getCountries() {
 		return ResponseEntity.ok(this.countriesService.getAllCountries());
 	}
 
+	/**
+	 * Sends name info to service and retrieves a country based on that name info
+	 * @param name The name info specified in the GET request
+	 * @return CountryWithInfo wrapped in ResponceEntity
+	 */
 	@GetMapping(value = "/countries/{name}")
 	public ResponseEntity<Object> getCountryByName(@PathVariable String name) {
 		return ResponseEntity.ok(this.countriesService.getCountryByName(name));
 	}
 
+	/**
+	 * Reactive approach is not supported in this build
+	 */
 	/*
 	@GetMapping(value = "/reactive/countries")
 	public Flux<Country> getReactiveCountries() {

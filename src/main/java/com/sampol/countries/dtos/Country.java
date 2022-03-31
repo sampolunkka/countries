@@ -6,6 +6,9 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * a DTO for Countries holding name & capital_code
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Country implements Serializable{
     
