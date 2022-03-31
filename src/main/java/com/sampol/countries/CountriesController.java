@@ -11,14 +11,15 @@ public class CountriesController {
 	private CountriesService countriesService = new CountriesService();
 
 	@GetMapping(value = "/countries")
-	public ResponseEntity getCountries() {
+	public ResponseEntity<Object> getCountries() {
 		return ResponseEntity.ok(this.countriesService.getAllCountries());
 	}
 
 	@GetMapping(value = "/countries/{name}")
-	public ResponseEntity getCountryByName(@PathVariable String name) {
+	public ResponseEntity<Object> getCountryByName(@PathVariable String name) {
 		return ResponseEntity.ok(this.countriesService.getCountryByName(name));
 	}
+
 	/*
 	@GetMapping(value = "/reactive/countries")
 	public Flux<Country> getReactiveCountries() {

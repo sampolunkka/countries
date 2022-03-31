@@ -1,26 +1,23 @@
-package com.sampol.countries;
+package com.sampol.countries.dtos;
 
-import java.io.Serializable;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CountryWithInfo extends Country implements Serializable {
+public class CountryWithInfo extends Country {
     
     private String capital;
     private int population;
     private String flag_file_url;
 
 
-    @SuppressWarnings("unchecked")
     @JsonProperty("flags")
     private void unpackNestedFlags(Map<String, Object> flags) {
         this.flag_file_url = (String)flags.get("png");
     }
 
-    @SuppressWarnings("unchecked")
     @JsonProperty("capital")
     private void unpackCapitalList(String[] capital) {
         this.capital = capital[0];
