@@ -1,4 +1,4 @@
-package com.sampol.countries;
+package com.sampol.countries.dtos;
 
 import java.io.Serializable;
 import java.util.List;

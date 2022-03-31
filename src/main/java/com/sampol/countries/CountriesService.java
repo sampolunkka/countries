@@ -1,8 +1,16 @@
 package com.sampol.countries;
 
+import com.sampol.countries.dtos.*;
+
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 
+import com.sampol.countries.dtos.Country;
+import com.sampol.countries.dtos.CountryWithInfo;
+import com.sampol.countries.dtos.CountryWrapper;
+
+@Service
 public class CountriesService {
 
     public CountryWrapper getAllCountries() {

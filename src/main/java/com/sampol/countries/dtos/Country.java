@@ -1,11 +1,10 @@
-package com.sampol.countries;
+package com.sampol.countries.dtos;
 
 import java.io.Serializable;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Country implements Serializable{
@@ -14,13 +13,11 @@ public class Country implements Serializable{
     private String country_code;
 
 
-    @SuppressWarnings("unchecked")
     @JsonProperty("name")
     private void unpackNestedName(Map<String, Object> name) {
         this.name = (String)name.get("common");
     }
 
-    @SuppressWarnings("unchecked")
     @JsonProperty("cca2")
     private void convertCca2(String cca2) {
         this.country_code = cca2;

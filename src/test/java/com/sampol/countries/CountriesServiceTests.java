@@ -1,4 +1,5 @@
 package com.sampol.countries;
+import com.sampol.countries.dtos.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
