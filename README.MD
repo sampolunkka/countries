@@ -1,3 +1,5 @@
+View in raw mode and fullscreen for optimized user experience https://raw.githubusercontent.com/sampolunkka/countries/main/README.MD
+
   .,-:::::     ...      ...    ::::::.    :::.:::::::::::::::::::..   :::.,:::::: .::::::. 
 ,;;;'````'  .;;;;;;;.   ;;     ;;;`;;;;,  `;;;;;;;;;;;'''';;;;``;;;;  ;;;;;;;'''';;;`    ` 
 [[[        ,[[     \[[,[['     [[[  [[[[[. '[[     [[      [[[,/[[['  [[[ [[cccc '[==/[[[[,
